@@ -28,6 +28,9 @@ Due: December 17, 2021
   <header class="sticky-top">
     <ul class="nav nav-pills ">
       <li class="nav-item">
+        <a class="nav-link" id="orderLink" target="_blank" href="" >Order Now</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link nonActive" href="#">Menu</a>
       </li>
       <li class="nav-item">
@@ -41,41 +44,74 @@ Due: December 17, 2021
   </header>
 
 
-  <article id="pizzaMenu" >
-    <h3 class="text-center">Pizza Menu</h3>
-    <p class="text-center">L size: $13.99&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M size: $11.99&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S size: $9.99</p>
-    <div class="d-flex mx-auto">
-      <div class="p-2">
-        <p class="text-center">Hawaiian Style</p>
-        <img width="150px" height="150px" src="./img/hawaiianStylePizza.jpg" alt="Hawaiian Style Pizza">
+  <article id="pizzaMenu">
+    <h3 class="text-center">All Menu</h3>
+
+    <div>
+      <h5 class="text-center">Pizzas</h5>
+      <p class="text-center">(All Pizza)&nbsp;&nbsp;&nbsp;&nbsp;L size: $13.99&nbsp;&nbsp;&nbsp;&nbsp;M size:
+        $11.99&nbsp;&nbsp;&nbsp;&nbsp;S size: $9.99</p>
+      <div class="d-flex mx-auto">
+        <div class="p-2">
+          <p class="text-center">Hawaiian Style</p>
+          <img class="pizza" width="150px" height="150px" src="./img/hawaiianStylePizza.jpg" alt="Hawaiian Style Pizza">
+        </div>
+        <div class="p-2">
+          <p class="text-center">Margherita</p>
+          <img class="pizza" width="150px" height="150px" src="./img/margheritaPizza.jpg" alt="Margherita Pizza">
+        </div class="p-2">
+        <div>
+          <p class="text-center">Meat</p>
+          <img class="pizza" width="150px" height="150px" src="./img/meatPizza.jpg" alt="Meat Pizza">
+        </div>
       </div>
-      <div class="p-2">
-        <p class="text-center">Margherita</p>
-        <img width="150px" height="150px" src="./img/margheritaPizza.jpg" alt="Margherita Pizza">
-      </div class="p-2">
-      <div>
-        <p class="text-center">Meat</p>
-        <img width="150px" height="150px" src="./img/meatPizza.jpg" alt="Meat Pizza">
+      <div class="d-flex mx-auto">
+        <div class="p-2">
+          <p class="text-center">Pepperoni</p>
+          <img class="pizza" width="150px" height="150px" src="./img/pepperoniPizza.jpg" alt="Pepperoni Pizza">
+        </div>
+        <div class="p-2">
+          <p class="text-center">Seafood</p>
+          <img class="pizza" width="150px" height="150px" src="./img/seafoodPizza.jpg" alt="Seafood Pizza">
+        </div>
+        <div class="p-2">
+          <p class="text-center">Veggie</p>
+          <img class="pizza" width="150px" height="150px" src="./img/veggiePizza.jpg" alt="Veggie Pizza">
+        </div>
       </div>
     </div>
-    <div class="d-flex mx-auto">
-      <div class="p-2">
-        <p class="text-center">Pepperoni</p>
-        <img width="150px" height="150px" src="./img/pepperoniPizza.jpg" alt="Pepperoni Pizza">
-      </div>
-      <div class="p-2">
-        <p class="text-center">Seafood</p>
-        <img width="150px" height="150px" src="./img/seafoodPizza.jpg" alt="Seafood Pizza">
-      </div>
-      <div class="p-2">
-        <p class="text-center">Veggie</p>
-        <img width="150px" height="150px" src="./img/veggiePizza.jpg" alt="Veggie Pizza">
-      </div>
+    <p></p>
+    <div>
+      <h5 class="text-center">Crust Types</h5>
+      <p class="text-center">・Regular ・Thick ・Thin ・Whole Wheat</p>
+    </div>
+    <p></p>
+
+    <div>
+      <h5 class="text-center">Extra Toppings</h5>
+      <p class="text-center">$3.00 per each</p>
+      <p class="text-center">Meats</p>
+      <p class="text-center">・Bacon ・Pepperoni ・Prosciutto ・Turkey</p>
+      <p class="text-center">Seafood</p>
+      <p class="text-center">・Anchovies ・Salmon ・Shrimps</p>
+      <p class="text-center">Vegetables</p>
+      <p class="text-center">・Broccoli ・Eggplant ・Garlic ・Mushrooms ・Onions ・Olives ・Zucchini</p>
+      <p class="text-center">Cheese</p>
+      <p class="text-center">・Chedar ・Mozzarella</p>
+      <p class="text-center">(free) Sauce / Dressing</p>
+      <p class="text-center">・Chili sauce ・Mayonnaise</p>
+    </div>
+    <p></p>
+
+    <div>
+      <h5 class="text-center">Beverages</h5>
+      <p class="text-center">Can: $1.25&nbsp;&nbsp;&nbsp;&nbsp;2 litter bottle: $2.99</p>
+      <p class="text-center">・Bottled water ・Coca-Cola ・Crush ・Ginger ale ・Pepsi ・Sprite</p>
     </div>
   </article>
 
 
-  <article id="storeInfo" class="nonSelected">
+  <article id="storeInfo" class="articleNonSelected">
     <h3 class="text-center">Store Information</h3>
     <address>
       <div>
@@ -91,16 +127,18 @@ Due: December 17, 2021
     </address>
   </article>
 
-  <article id="openingHours" class="nonSelected">
+  <article id="openingHours" class="articleNonSelected">
     <h3 class="text-center">Opening Hours</h3>
     <ul></ul>
   </article>
   </main>
 
   <footer class="fixed-bottom ">
-    <p class="text-center">
-      <a href="#">Back to the top</a>
-    </p>
+    <div class="jumpUpTop" >
+      <a >
+        <img id="order" src="./img/up.svg" width="30px" height="30px" >
+      </a>
+    </div>
     <p class="text-center">
       <small>&copy; Yuriko Uchida, #200448500 on <time datetime="2021-12-17">December 17th,
           2021</time></small>

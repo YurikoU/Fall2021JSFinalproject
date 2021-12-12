@@ -18,7 +18,7 @@ h1, li, a, p {
   color: #C0C0C0;
 }
 
-h3, .fontRed {
+h3, h5, .fontRed {
   color: #ff3333;
 }
 
@@ -39,17 +39,54 @@ h3 {
   padding-top: 30px;  
 }
 
-
-article#pizzaMenu > div {
-  width: 500px;
+article#pizzaMenu, article#storeInfo, article#openingHours {
+  padding-bottom: 200px;  
 }
 
-article#pizzaMenu img {
+/* Styles for footer */
+footer > div.jumpUpTop {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #dddddd;  
+
+  position: fixed;
+  bottom: 50px;  
+  right: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+
+/* Styles for menu contents */
+article#pizzaMenu {
+  width: 100%;
+}
+
+article#pizzaMenu img.pizza {
   margin-bottom: 30px;
   margin-left: 5px;
   margin-right: 5px;
 }
 
+article#pizzaMenu > div  {
+  width: 850px;
+  margin: 0 auto;
+  border: .75px #868686 solid;
+  border-radius: 10px;
+}
+
+article#pizzaMenu > div > div {
+  width: 500px;
+}
+
+
+
+/* Styles for store info. contents */
 /* Set block-level elements at the center */
 address {
   display: flex;
@@ -63,10 +100,6 @@ address > div {
   width: 300px;
 }
 
-article#openingHours {
-  padding-bottom: 200px;  
-}
-
 article#openingHours > ul {
   display: flex;
   flex-direction: column;
@@ -74,30 +107,60 @@ article#openingHours > ul {
 }
   
 
+/* Styles for nav bar */
 /* change nav bar color */
-html > body > header.sticky-top > ul.nav.nav-pills > li.nav-item > a.nav-link.active {
+ul.nav > li.nav-item > a.nav-link {
+  transition-property: all;
+  transition-duration: .3s;
+}
+
+ul.nav > li.nav-item > a.nav-link.active {
   background-color: #ff4d4d;
   color: #000000;
 }
 
-html > body > header.sticky-top > ul.nav.nav-pills > li.nav-item > a.nav-link.nonActive {
+ul.nav > li.nav-item > a.nav-link.nonActive {
   color: #C0C0C0;
   border: .5px #C0C0C0 solid;
   border-radius: 10px;
 }
 
+ul.nav > li.nav-item > a#orderLink.nav-link {
+  color: #ff4d4d;
+  font-weight: bold;
+  border: 5px #ff4d4d solid;
+  border-radius: 10px;
+  height: 47px;
+}
 
-.nonSelected {
+ul.nav > li.nav-item > a.nav-link:hover, 
+ul.nav > li.nav-item > a#orderLink:hover {
+  background-color: #ff4d4d;
+  color: #FFFFFF;
+  text-shadow: .5px .5px .5px #000000;
+}
+
+
+.articleNonSelected {
   display: none;
 }
 
-.focusedImgDiv {
-  z-index : 500;
+.imgDivFocused {
+  position: fixed;
+  top: 155px;
+  left: calc(50% - 300px);
+
   width : 600px;
-  background-color: black;
+  background-color: #000000;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.focusedImg {
+.imgFocused {
+  display: inline-block;
   height: 500px;
   width : 500px;
 }

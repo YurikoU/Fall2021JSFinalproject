@@ -6,20 +6,21 @@ Program: Computer Programming (CMPG)
 Final Project
 Due: December 17, 2021
 */
-//Declare a const
-const body = document.body;
-
 //Declare variables
 var hoursUl = document.querySelector("article#openingHours > ul");
-var imgs = document.querySelectorAll('img');
+var imgs = document.querySelectorAll('img.pizza');
 var articles = document.querySelectorAll("article");
 var navs = document.querySelectorAll('header a');
+var linkToTop = document.querySelector('footer > div.jumpUpTop > a');
 var numOfNavs = navs.length;
 var numOfImgs = imgs.length;
 var index = 0;
 
 
 //Add addEventListeners
+linkToTop.addEventListener('click', (e) => {
+  setTimeout((e) => { window.location.href = '#' }, 300);
+});
 while (index < numOfNavs) {
   navs[index].addEventListener('click', (e) => toggleNavClass(e));
   navs[index].addEventListener('click', (e) => toggleVisibleArticle(e));
@@ -31,6 +32,10 @@ while (index < numOfImgs) {
   imgs[index].addEventListener('mouseout', (e) => resetImgSize(e));
   index++;
 }
+
+
+
+
 
 //Switch the class name
 function toggleNavClass(e) {
@@ -49,34 +54,35 @@ function toggleNavClass(e) {
 function toggleVisibleArticle(e) {
   //Add the class name temporally
   Array.from(articles).forEach(function (article) {
-    article.classList.add("nonSelected");
+    article.classList.add("articleNonSelected");
   });
 
   let article;
-  if (e.target == navs[0]) {
+  if (e.target == navs[1]) {
     article = document.getElementById("pizzaMenu");
-  } else if (e.target == navs[1]) {
-    article = document.getElementById("storeInfo");
   } else if (e.target == navs[2]) {
+    article = document.getElementById("storeInfo");
+  } else if (e.target == navs[3]) {
     article = document.getElementById("openingHours");
   }
   //Make the only article selected visible
-  article.classList.remove("nonSelected");
+  article.classList.remove("articleNonSelected");
 }
 
 //Make the image size bigger
 function enlargeImg(e) {
   let parentDiv = e.target.parentNode;
-  e.target.classList.add("focusedImg");
-  parentDiv.classList.add("focusedImgDiv");
-}
+  e.target.classList.add("imgFocused");
+  parentDiv.classList.add("imgDivFocused");
+};
+
 //Reset the image size
-function resetImgSize(e){
+function resetImgSize(e) {
   Array.from(imgs).forEach(function (img) {
-    img.classList.remove("focusedImg");
-    img.parentNode.classList.remove("focusedImgDiv");
+    img.classList.remove("imgFocused");
+    img.parentNode.classList.remove("imgDivFocused");
   })
-}
+};
 
 
 //Set the opening hours
