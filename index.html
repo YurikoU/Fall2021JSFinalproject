@@ -7,7 +7,6 @@ Final Project
 Due: December 17, 2021
 -->
 <!DOCTYPE html>
-
 <html lang="en-CA">
 
 <head>
@@ -17,38 +16,97 @@ Due: December 17, 2021
   <meta name="author" content="Yuriko Uchida" />
   <meta name="description" content="pizza menu and store information">
   <title> Menu & Store Info. | Georgian pizza </title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="shortcut icon" href="favicon.png" type="image/png" />
-</head>
-
+  <!-- CSS Framework   https://getbootstrap.com/  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style/styles.css">
+  <!-- Icon Source  https://www.flaticon.com/free-icon/pizza_3595458?term=pizza&page=1&position=8&page=1&position=8&related_id=3595458&origin=search -->
+  <link rel="shortcut icon" href="./img/favicon.png" type="image/png" />
 </head>
 
 <body>
+  <header class="sticky-top">
+    <ul class="nav nav-pills ">
+      <li class="nav-item">
+        <a class="nav-link nonActive" href="#">Menu</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nonActive" href="#storeInfo" onclick="showMaskAlert()">Store Info</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nonActive" href="#openingHours">Opening Hours</a>
+      </li>
+    </ul>
+    <h1 class="text-center">Georgian Pizza</h1>
+  </header>
 
 
-  <aside>
-    <h2>Store Information</h2>
+  <article id="pizzaMenu" >
+    <h3 class="text-center">Pizza Menu</h3>
+    <p class="text-center">L size: $13.99&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M size: $11.99&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S size: $9.99</p>
+    <div class="d-flex mx-auto">
+      <div class="p-2">
+        <p class="text-center">Hawaiian Style</p>
+        <img width="150px" height="150px" src="./img/hawaiianStylePizza.jpg" alt="Hawaiian Style Pizza">
+      </div>
+      <div class="p-2">
+        <p class="text-center">Margherita</p>
+        <img width="150px" height="150px" src="./img/margheritaPizza.jpg" alt="Margherita Pizza">
+      </div class="p-2">
+      <div>
+        <p class="text-center">Meat</p>
+        <img width="150px" height="150px" src="./img/meatPizza.jpg" alt="Meat Pizza">
+      </div>
+    </div>
+    <div class="d-flex mx-auto">
+      <div class="p-2">
+        <p class="text-center">Pepperoni</p>
+        <img width="150px" height="150px" src="./img/pepperoniPizza.jpg" alt="Pepperoni Pizza">
+      </div>
+      <div class="p-2">
+        <p class="text-center">Seafood</p>
+        <img width="150px" height="150px" src="./img/seafoodPizza.jpg" alt="Seafood Pizza">
+      </div>
+      <div class="p-2">
+        <p class="text-center">Veggie</p>
+        <img width="150px" height="150px" src="./img/veggiePizza.jpg" alt="Veggie Pizza">
+      </div>
+    </div>
+  </article>
+
+
+  <article id="storeInfo" class="nonSelected">
+    <h3 class="text-center">Store Information</h3>
     <address>
       <div>
-        <p class="orange">Email Us</p><a href="*************@georgian.ca">*************@georgian.ca</a>
+        <p class="fontRed">Email Us</p><a href="*************@georgian.ca">*************@georgian.ca</a>
       </div>
       <div>
-        <p class="orange">Call Us</p><a href="tel:+1*******">(604) ***-****</a>
+        <p class="fontRed">Call Us</p><a href="tel:+1*******">(604) ***-****</a>
       </div>
       <div>
-        <p class="orange">Visit Us</p>
+        <p class="fontRed">Visit Us</p>
         <p id="address">199 Georgian Drive, Barrie, ON L1N 6X9</p>
       </div>
     </address>
-  </aside>
+  </article>
 
-  <aside class="operaHour">
-    <h2>Operating Hours</h2>
+  <article id="openingHours" class="nonSelected">
+    <h3 class="text-center">Opening Hours</h3>
     <ul></ul>
-  </aside>
+  </article>
   </main>
 
-  <script type="text/JavaScript" src="yuriko.js">
+  <footer class="fixed-bottom ">
+    <p class="text-center">
+      <a href="#">Back to the top</a>
+    </p>
+    <p class="text-center">
+      <small>&copy; Yuriko Uchida, #200448500 on <time datetime="2021-12-17">December 17th,
+          2021</time></small>
+    </p>
+  </footer>
+  <script type="text/JavaScript" src="./js/yuriko.js">
   </script>
 </body>
 
