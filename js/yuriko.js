@@ -18,7 +18,18 @@ var index = 0;
 
 
 //Add addEventListeners
-linkToTop.addEventListener('click', (e) => {
+linkToTop.addEventListener('click', (e) => {  
+  //Reset the active nav color
+  Array.from(navs).forEach(function(nav) {
+    nav.classList.remove("active");
+    nav.classList.add("nonActive");
+  })
+  //Show pizza menu by default
+  Array.from(articles).forEach(function (article) {
+    article.classList.remove("articleFadein");
+  });
+  articles[0].classList.add("articleFadein");
+  //Delay a bit
   setTimeout((e) => { window.location.href = '#' }, 300);
 });
 while (index < numOfNavs) {
@@ -55,6 +66,7 @@ function toggleVisibleArticle(e) {
   //Add the class name temporally
   Array.from(articles).forEach(function (article) {
     article.classList.add("articleNonSelected");
+    article.classList.remove("articleFadein");
   });
 
   let article;
@@ -66,7 +78,7 @@ function toggleVisibleArticle(e) {
     article = document.getElementById("openingHours");
   }
   //Make the only article selected visible
-  article.classList.remove("articleNonSelected");
+  article.classList.add("articleFadein");
 }
 
 //Make the image size bigger
