@@ -140,18 +140,20 @@ ul.nav > li.nav-item > a#orderLink:hover {
   text-shadow: .5px .5px .5px #000000;
 }
 
-.articleNonSelected {
-  /* display: none; */
-
+.articleInvisible {
+  display: none;
+}
+/* 
+.articleFadein {
   opacity: .1;
   transform: translate(0, 10px);
   transition: all 1.75s;
 }
 
-.articleFadein {
+.articleVisible {
   opacity: 1;
   transform: translate(0, 0);
-}
+} */
 
 
 .imgDivFocused {

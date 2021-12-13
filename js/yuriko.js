@@ -6,6 +6,9 @@ Program: Computer Programming (CMPG)
 Final Project
 Due: December 17, 2021
 */
+//Declare a const
+const body = document.body;
+
 //Declare variables
 var hoursUl = document.querySelector("article#openingHours > ul");
 var imgs = document.querySelectorAll('img.pizza');
@@ -16,7 +19,6 @@ var numOfNavs = navs.length;
 var numOfImgs = imgs.length;
 var index = 0;
 
-
 //Add addEventListeners
 linkToTop.addEventListener('click', (e) => {  
   //Reset the active nav color
@@ -26,9 +28,9 @@ linkToTop.addEventListener('click', (e) => {
   })
   //Show pizza menu by default
   Array.from(articles).forEach(function (article) {
-    article.classList.remove("articleFadein");
+    article.classList.add("articleInvisible");
   });
-  articles[0].classList.add("articleFadein");
+  articles[0].classList.remove("articleInvisible");
   //Delay a bit
   setTimeout((e) => { window.location.href = '#' }, 300);
 });
@@ -65,8 +67,8 @@ function toggleNavClass(e) {
 function toggleVisibleArticle(e) {
   //Add the class name temporally
   Array.from(articles).forEach(function (article) {
-    article.classList.add("articleNonSelected");
-    article.classList.remove("articleFadein");
+    article.classList.add("articleInvisible");
+    // article.classList.remove("articleVisible");
   });
 
   let article;
@@ -78,7 +80,8 @@ function toggleVisibleArticle(e) {
     article = document.getElementById("openingHours");
   }
   //Make the only article selected visible
-  article.classList.add("articleFadein");
+  article.classList.remove("articleInvisible");
+  // article.classList.add("articleVisible");
 }
 
 //Make the image size bigger
