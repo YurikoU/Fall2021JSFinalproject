@@ -147,6 +147,7 @@ ul.nav > li.nav-item > a#orderLink:hover {
 .articleFadein {
   opacity: .1;
   transform: translate(0, 10px);
+  
   transition: all .75s;
 }
 
