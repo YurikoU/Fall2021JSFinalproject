@@ -143,17 +143,17 @@ ul.nav > li.nav-item > a#orderLink:hover {
 .articleInvisible {
   display: none;
 }
-/* 
+
 .articleFadein {
   opacity: .1;
   transform: translate(0, 10px);
-  transition: all 1.75s;
+  transition: all .75s;
 }
 
-.articleVisible {
+.articleFadein.articleVisible {
   opacity: 1;
   transform: translate(0, 0);
-} */
+}
 
 
 .imgDivFocused {

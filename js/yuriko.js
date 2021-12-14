@@ -6,9 +6,6 @@ Program: Computer Programming (CMPG)
 Final Project
 Due: December 17, 2021
 */
-//Declare a const
-const body = document.body;
-
 //Declare variables
 var hoursUl = document.querySelector("article#openingHours > ul");
 var imgs = document.querySelectorAll('img.pizza');
@@ -19,10 +16,16 @@ var numOfNavs = navs.length;
 var numOfImgs = imgs.length;
 var index = 0;
 
+
 //Add addEventListeners
-linkToTop.addEventListener('click', (e) => {  
+//Fade-in effect when loading the site
+window.addEventListener('load', (e) => {
+  articles[0].classList.add("articleVisible");
+});
+//Fade-in affect when clicking the Up-arrow button
+linkToTop.addEventListener('click', (e) => {
   //Reset the active nav color
-  Array.from(navs).forEach(function(nav) {
+  Array.from(navs).forEach(function (nav) {
     nav.classList.remove("active");
     nav.classList.add("nonActive");
   })
@@ -32,14 +35,19 @@ linkToTop.addEventListener('click', (e) => {
   });
   articles[0].classList.remove("articleInvisible");
   //Delay a bit
-  setTimeout((e) => { window.location.href = '#' }, 300);
+  setTimeout((e) => {
+    window.location.href = '#';
+    articles[0].classList.add("articleVisible");
+  }, 300);
 });
+//Apply the functions to toggle the nav color, and function to switch the article visible
 while (index < numOfNavs) {
   navs[index].addEventListener('click', (e) => toggleNavClass(e));
   navs[index].addEventListener('click', (e) => toggleVisibleArticle(e));
   index++;
 }
 index = 0;
+//Apply the mouseover/mouseout effect to the pizza photo
 while (index < numOfImgs) {
   imgs[index].addEventListener('mouseover', (e) => enlargeImg(e));
   imgs[index].addEventListener('mouseout', (e) => resetImgSize(e));
@@ -68,7 +76,7 @@ function toggleVisibleArticle(e) {
   //Add the class name temporally
   Array.from(articles).forEach(function (article) {
     article.classList.add("articleInvisible");
-    // article.classList.remove("articleVisible");
+    article.classList.remove("articleVisible");
   });
 
   let article;
@@ -81,7 +89,10 @@ function toggleVisibleArticle(e) {
   }
   //Make the only article selected visible
   article.classList.remove("articleInvisible");
-  // article.classList.add("articleVisible");
+  //Fade in affect for clicked article
+  setTimeout((e) => {
+    article.classList.add("articleVisible");
+  }, 300);
 }
 
 //Make the image size bigger
