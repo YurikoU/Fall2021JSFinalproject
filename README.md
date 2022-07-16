@@ -1,5 +1,5 @@
 # Live Site   
-https://yurikou.github.io/Fall2021JSFinalproject/   
+https://yurikou.github.io/Pizzeria_site/   
 
 # References   
 #### CSS Framework    
